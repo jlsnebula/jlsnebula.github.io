@@ -1,0 +1,22 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur border-b">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="flex h-16 items-center justify-between">
+      <a routerLink="/" class="text-xl font-semibold tracking-tight">Jls Nebula BV</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="text-indigo-600" class="text-gray-700 hover:text-indigo-600 transition-colors">Home</a>
+        <a routerLink="/contact" routerLinkActive="text-indigo-600" class="text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
+      </nav>
+      <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100" (click)="toggleMobileNav()" aria-label="Toggle navigation">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="md:hidden border-t" *ngIf="mobileOpen">
+    <div class="mx-auto max-w-6xl px-4 py-3 space-y-2">
+      <a routerLink="/" (click)="closeMobile()" class="block text-gray-700 hover:text-indigo-600">Home</a>
+      <a routerLink="/contact" (click)="closeMobile()" class="block text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </div>
+</header>
